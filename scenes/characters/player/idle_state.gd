@@ -20,6 +20,7 @@ func _on_physics_process(_delta : float) -> void:
 	else:
 		animated_sprite_2d.play("idle_front")
 
+
 func _on_next_transitions() -> void:
 	GameInputEvents.movement_input()
 
