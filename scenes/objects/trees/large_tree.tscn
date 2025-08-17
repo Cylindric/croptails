@@ -1,9 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8hnmbc271gce"]
+[gd_scene load_steps=9 format=3 uid="uid://b8hnmbc271gce"]
 
+[ext_resource type="Shader" uid="uid://cqhuklj62aaws" path="res://scenes/objects/trees/tree_shake.gdshader" id="1_f4wgc"]
 [ext_resource type="Texture2D" uid="uid://nurolsnglt8c" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_wjqkr"]
 [ext_resource type="Script" uid="uid://bq721o5ktqvku" path="res://scenes/objects/trees/tree.gd" id="2_f4wgc"]
 [ext_resource type="PackedScene" uid="uid://blspi15gut243" path="res://scenes/components/hurt_component.tscn" id="3_6vpey"]
 [ext_resource type="PackedScene" uid="uid://ckpqc34suxyim" path="res://scenes/components/damage_component.tscn" id="4_0ia52"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6vpey"]
+resource_local_to_scene = true
+shader = ExtResource("1_f4wgc")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_au4vd"]
 radius = 4.0
@@ -12,7 +19,9 @@ radius = 4.0
 size = Vector2(10, 22)
 
 [node name="LargeTree" type="Sprite2D"]
+material = SubResource("ShaderMaterial_6vpey")
 texture = ExtResource("1_wjqkr")
+offset = Vector2(0, -14)
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
 script = ExtResource("2_f4wgc")
@@ -21,13 +30,13 @@ script = ExtResource("2_f4wgc")
 position = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 15)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_au4vd")
 
 [node name="HurtComponent" parent="." instance=ExtResource("3_6vpey")]
 
 [node name="HurtComponentCollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
-position = Vector2(0, 4)
+position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_au4vd")
 debug_color = Color(0.867267, 0.0500377, 0.84276, 0.42)
 

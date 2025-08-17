@@ -1,5 +1,7 @@
 extends Sprite2D
 
+@export var shake_intensity: float = 1.0
+
 @onready var hurt_component: HurtComponent = $HurtComponent
 @onready var damage_component: DamageComponent = $DamageComponent
 
@@ -13,6 +15,9 @@ func _ready() -> void:
 func on_hurt(hit_damage: int) -> void:
 	print("tree hit!")
 	damage_component.apply_damage(hit_damage)
+	material.set_shader_parameter("shake_intensity", shake_intensity)
+	await get_tree().create_timer(1.0).timeout
+	material.set_shader_parameter("shake_intensity", 0.0)
 
 
 func on_max_damage_reached() -> void:
