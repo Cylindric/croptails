@@ -7,7 +7,7 @@ signal hurt
 
 
 func _on_area_entered(area: Area2D) -> void:
-	print("Hurt area entered")
+	#print("Hurt area entered")
 	var hit_component = area as HitComponent
 
 	if tool == hit_component.current_tool:

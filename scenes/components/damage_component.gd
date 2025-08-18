@@ -11,5 +11,6 @@ func apply_damage(damage: int) -> void:
 	print("Damage taken!")
 	current_damage = clamp(current_damage + damage, 0, max_damage)
 
-	if current_damage == max_damage:
+	if current_damage >= max_damage:
+		#await get_tree().create_timer(0.6).timeout
 		max_damage_reached.emit()
