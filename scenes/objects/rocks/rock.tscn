@@ -35,6 +35,7 @@ position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_70ahf")
 
 [node name="HurtComponent" parent="." instance=ExtResource("3_bntui")]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
 position = Vector2(0, -4)
