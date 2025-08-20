@@ -27,6 +27,7 @@ func set_movement_target() -> void:
 	navigation_agent_2d.target_position = target_position
 	speed = randf_range(min_speed, max_speed)
 
+
 func _on_process(_delta : float) -> void:
 	pass
 
