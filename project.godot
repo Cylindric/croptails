@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Croptails"
-run/main_scene="uid://tjf6m68dn87v"
+run/main_scene="uid://dykewfs1hf3xh"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ToolManager="*res://scripts/globals/tool_manager.gd"
 
 [display]
 
