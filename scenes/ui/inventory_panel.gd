@@ -1,5 +1,6 @@
 extends PanelContainer
 
+
 @onready var log_label: Label = $MarginContainer/VBoxContainer/Logs/LogLabel
 @onready var stone_label: Label = $MarginContainer/VBoxContainer/Stone/StoneLabel
 @onready var corn_label: Label = $MarginContainer/VBoxContainer/Corn/CornLabel
