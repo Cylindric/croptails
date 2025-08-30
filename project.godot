@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Croptails"
-run/main_scene="uid://dykewfs1hf3xh"
+run/main_scene="uid://k2m2847cc87v"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,6 +26,7 @@ window/size/viewport_height=270
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"
 
 [file_customization]
